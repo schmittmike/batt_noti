@@ -1,0 +1,13 @@
+[Unit]
+Description="gives notify-send notification at 5% and 10% battery"
+
+[Service]
+User=sch
+WorkingDirectory=/usr/local
+ExecStart=/bin/bash /usr/local/battery_notification.sh
+Restart=always
+RestartSec=30
+Environment="DISPLAY=:1"
+
+[Install]
+WantedBy=multi-user.target
